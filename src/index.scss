@@ -1,0 +1,22 @@
+@import url('https://fonts.cdnfonts.com/css/hk-groteks');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'HK Grotesk', sans-serif;
+}
+
+*::selection{
+  background-color: rgba(32,183,204, 0.2);
+  color: rgba(32,183,204, 1);
+}
+
+
+
+body{
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgb(32,34,34);
+  padding: 9px 9px 5px 0px;
+}
