@@ -1,6 +1,8 @@
+import { motion } from "framer-motion";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 // import { RiCloseLine } from "react-icons/ri";
+
 
 const Modal = ({ setIsOpen, children }) => {
   const dispatch = useDispatch();
@@ -19,7 +21,14 @@ const Modal = ({ setIsOpen, children }) => {
     <>
       <div className="darkBG" style={closeControl ? {animationName: "fade-out"} : {}} onClick={handleCloseRequest}/>
       <div className="centered">
-        <div className={`modal`} style={closeControl ? {animationName: "scaled-down"} : {}}>
+        <motion.div 
+            className={`modal`} 
+            style={closeControl ? {animationName: "scaled-down"} : {}}
+            // whileHover={{ scale: 1.2 }}
+            // whileTap={{ scale: 1.1 }}
+            drag
+            dragConstraints={{ left: -100, right: 100, top: -100, bottom: 100 }}
+            >
           <div className="modal-top">
           </div>
           <button className="closeBtn" onClick={handleCloseRequest}>
@@ -30,7 +39,7 @@ const Modal = ({ setIsOpen, children }) => {
           <div className="modalContent">
             {children}
           </div>
-        </div>
+        </motion.div>
       </div>
 
     </>
